@@ -43,6 +43,10 @@ function techCareersCalculator ()
         break;
     }
   }
+
+  // OUTPUT BUFFER.
+  // Hold onto the ECHOs, and don't send yet.
+  ob_start();
   ?>
   <form method="POST" action="#">
     <label for="num1">
@@ -87,4 +91,11 @@ function techCareersCalculator ()
       <?php echo $result; ?>
     </p>
   <?php endif;
+
+  // END OUTPUT BUFFER.
+  // Everything after this point will be ECHOd like normal again.
+  $outputString = ob_get_clean();
+
+  // Shortcodes with output should RETURN a STRING.
+  return $outputString;
 }

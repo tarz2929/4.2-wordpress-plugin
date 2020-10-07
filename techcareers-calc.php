@@ -12,6 +12,11 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
 
+// If content contains [techcareers-calc], then our
+// techCareersCalculator() function will execute.
+add_shortcode( 'techcareers-calc', 'techCareersCalculator' );
+
+// Output and run our calculator.
 function techCareersCalculator ()
 {
   // Set result to false so we can check later if it should be output.
